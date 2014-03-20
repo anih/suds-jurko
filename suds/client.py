@@ -944,4 +944,4 @@ def _parse(string):
 
     """
     if string:
-        return suds.sax.parser.Parser().parse(string=string)
+        return suds.sax.parser.Parser().parse(string=string.decode('utf-8').replace(u'\uffff', '').encode('utf-8'))
